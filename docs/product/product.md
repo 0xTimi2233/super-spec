@@ -1,17 +1,17 @@
 # Super Spec
 
-## Purpose
+## 目的
 
 Super Spec 是运行在 Codex 上、深度集成 GitHub 的软件交付工作流套件。它把需求澄清、项目级事实维护、垂直切片、验收测试、垂直 TDD、审查和合并连接成可恢复的端到端流程，同时让 GitHub 而不是某个 AI 会话持有权威状态。
 
-## Users
+## 用户
 
 - 使用 Codex 维护软件项目的仓库所有者与 Maintainer。
 - 负责需求塑形、架构、测试、实现或审查的团队成员。
 - 通过公开 Issue 或 PR 参与项目的外部贡献者。
 - 需要同时管理公开产品工作与敏感控制工作的团队。
 
-## Problems
+## 问题
 
 - 需求、设计、Issue、测试和代码分别维护，容易形成互相漂移的事实来源。
 - 长时间 AI 交付依赖单一对话持续运行，异步 CI 或审查失败后难以恢复正确上下文。
@@ -21,7 +21,7 @@ Super Spec 是运行在 Codex 上、深度集成 GitHub 的软件交付工作流
 - 内部需求、普通外部 Issue 与非受信任外部 PR 需要不同入口，但最终仍应汇入一致的仓库治理。
 - GitHub Actions、Runtime 和本地 AI 的责任容易重叠，导致谁负责触发、诊断、修复和合并不清晰。
 
-## Value
+## 价值
 
 - 以规范 Spec、仓库标准、真实 Issue 图、代码与 Active Contract 构成清晰的事实层次。
 - 以一个 Issue、一个 Worktree、一个实现 PR 交付可独立验收的垂直切片。
@@ -30,7 +30,7 @@ Super Spec 是运行在 Codex 上、深度集成 GitHub 的软件交付工作流
 - 让设计和 Target Contract 可以领先实现，同时保证 Active Contract 与代码原子交付。
 - 通过 GitHub 原生权限、审查、Merge Queue 与安全检查形成可审计的合并门禁。
 
-## Capabilities
+## 能力
 
 ### 需求与塑形
 
@@ -57,7 +57,7 @@ Super Spec 是运行在 Codex 上、深度集成 GitHub 的软件交付工作流
 - 对外部 PR 使用非受信任输入边界，同时让通过信任入口的贡献进入相同最终门禁。
 - 初始化并幂等维护仓库标签、Project 状态、模板、Actions、安全设置和 Runtime 定义。
 
-## Product Principles
+## 产品原则
 
 1. **一个事实只维护一次。** 产品行为在 Issue，测试设计在测试代码，无法自动化的证据在 PR，当前实现现实在代码、测试与 Active Contract。
 2. **GitHub 持有状态，会话执行流程。** 会话可以恢复或替换，不能成为跨流程事实来源。
@@ -70,7 +70,7 @@ Super Spec 是运行在 Codex 上、深度集成 GitHub 的软件交付工作流
 9. **精简但有效。** Skill、状态、标签和配置只保留支撑明确语义所需的最小集合。
 10. **缺少前置决定就停止。** 后续流程不能现场补写或猜测上游产品、设计、架构和契约决定。
 
-## Boundaries
+## 边界
 
 - Super Spec 不替代 GitHub 的权限模型、Issue、PR、Project、Actions 或 Merge Queue。
 - Workflow Runtime 不进行需求理解、技术诊断、代码审查或合并。
@@ -82,6 +82,6 @@ Super Spec 是运行在 Codex 上、深度集成 GitHub 的软件交付工作流
 - 架构概览不复制可从代码或 Active Contract 推导的当前组件清单。
 - 本产品不维护公开与私有两份产品代码镜像。
 
-## Vision
+## 愿景
 
 任何一次软件变更都可以从自然语言需求开始，经过充分塑形后成为可审查的规范 Spec 和真实 Issue 图，再由可恢复的 AI 流程在 GitHub 原生治理下完成验收、实现和合并。用户可以持续处理新的需求，而不必守着某个长时间运行的主代理，也不必依赖隐藏会话记忆理解项目当前处于哪里。
